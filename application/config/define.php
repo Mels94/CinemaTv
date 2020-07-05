@@ -1,0 +1,14 @@
+<?php
+
+define('ASSETS', $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'].'/assets/');
+
+define("USERS_TABLE", "CREATE TABLE IF NOT EXISTS `users`(
+id int(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+first_name VARCHAR(100) NOT NULL,
+last_name VARCHAR(100) NOT NULL,
+username VARCHAR(100) NOT NULL,
+email VARCHAR(100) UNIQUE NOT NULL,
+password VARCHAR(100) NOT NULL,
+cookie_key VARCHAR(100),
+forgot_key VARCHAR(100)
+)");
