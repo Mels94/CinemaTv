@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="4d3a8435-9a70-4ecc-97df-dbfef62fefc8" name="cinema" url="http://androblog.tk">
-        <fileTransfer rootFolder="/public_html" host="androblog.tk" port="21">
+      <webServer id="4d3a8435-9a70-4ecc-97df-dbfef62fefc8" name="cinema" url="http://films-gyumri.tk">
+        <fileTransfer rootFolder="/public_html" host="films-gyumri.tk" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

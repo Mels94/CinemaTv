@@ -53,7 +53,7 @@ class Contact
 
     public function sendEmail(){
         if ($this->validate() == []){
-            $to = "melssaribekyan@mail.ru";
+            $to = "cinematv@films-gyumri.tk";
             $subject = "$this->subject";
             $message = "$this->message";
             $headers = "MIME-Version: 1.0" . "\r\n";

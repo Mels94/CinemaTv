@@ -73,8 +73,8 @@
                                 <div class="card-header" id="headingOne<?= $item['id']; ?>">
                                     <button type="button" class="accordion_btn" data-toggle="collapse" data-target="#collapseOne<?= $item['id']; ?>"
                                             aria-expanded="false" aria-controls="collapseOne"
-                                            data-id="<?= $item['id']; ?>" accesskey="<?= $data[0][0]['id']; ?>">
-                                        <span><?= $item['name']; ?> Kinotatron</span>
+                                            data-id="<?= $item['id']; ?>" accesskey="<?= $data[0][0]['id']; ?>" data-name="<?= $data[0][0]['name']; ?>">
+                                        <span><?= $item['name']; ?> cinema</span>
                                         <span><?= $item['city']; ?>, <?= $item['address']; ?></span>
                                     </button>
                                 </div>
@@ -140,7 +140,7 @@
 <!-- end details -->
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade modal-details" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

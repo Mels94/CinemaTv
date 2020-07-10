@@ -39,9 +39,9 @@ $(document).ready(function () {
             'C393.633,47.616,391.175,38.442,384.001,34.3z"/></g></g></svg>'
     });
         $.LoadingOverlay("show");
-        setTimeout(function(){
-            $.LoadingOverlay("hide");
-        }, 3000);
+    setTimeout(function () {
+        $.LoadingOverlay("hide");
+    }, 2000);
 /*        window.onload = () => {
             $.LoadingOverlay("hide");
         }*/
@@ -151,6 +151,7 @@ $(document).ready(function () {
     $('.accordion_btn').on('click', function () {
         let c_id = $(this).attr('data-id');
         let f_id = $(this).attr('accesskey');
+        let f_name = $(this).attr('data-name');
         $('.remove').remove();
         $.ajax({
             url: window.location.origin + '/site/details_film/1',
@@ -161,9 +162,9 @@ $(document).ready(function () {
                 $.each(data, function (i, item) {
                     $('.tbody').append(`<tr class="remove">
                                             <th>${i + 1}</th>
-                                            <td class="open-seats-modal" data-id="${c_id}" accesskey="${item.id}" slot="${f_id}">${item.start}</td>
-                                            <td class="open-seats-modal" data-id="${c_id}" accesskey="${item.id}" slot="${f_id}">${item.end}</td>
-                                        </tr>`);
+                                            <td class="open-seats-modal" data-id="${c_id}" accesskey="${item.id}" dir="${f_name}">${item.start}</td>
+                                            <td class="open-seats-modal" data-id="${c_id}" accesskey="${item.id}" dir="${f_name}">${item.end}</td>
+                                        </tr><input type="hidden" value="${f_id}" id="film_id">`);
                 })
             }
         })
@@ -243,7 +244,7 @@ $(document).ready(function () {
         let timeId = $(this).attr('accesskey');
         let arrSeats = number.split('-');
         let _this = $(this);
-        let film_id = $('.open-seats-modal').attr('slot');
+        let film_id = $('#film_id').val();
         let href = window.location.href;
         if (href === window.location.origin + '/site/details_film/' + film_id) {
             if (_this.attr('disabled')) {
@@ -334,6 +335,10 @@ $(document).ready(function () {
     $(document).on('click', '.open-seats-modal', function () {
         let cinema_id = $(this).attr('data-id');
         let timeId = $(this).attr('accesskey');
+        let film_name = $(this).attr('dir');
+        let timeText = $(this).closest('tr').find('.open-seats-modal').text();
+        let start = timeText.substring(0,19);
+        let end = timeText.substring(19);
         $.ajax({
             url: window.location.origin + '/site/details_film/1',
             type: 'post',
@@ -341,6 +346,7 @@ $(document).ready(function () {
             data: {c_id: cinema_id, time_id: timeId},
             success: function (data) {
                 modal.find('.modal-body div').remove();
+                $('.remove').remove();
                 modal.find('.modal-body').append(`<div></div>`)
                 let k = 1;
                 let tr = ``;
@@ -357,8 +363,10 @@ $(document).ready(function () {
                     modal.find(`.modal-body div span[data-id=${item.seats}] i`).css('color', 'red');
                     modal.find(`.modal-body div span[data-id=${item.seats}]`).attr('disabled', 'disabled');
                     modal.find(`.modal-body div span[data-id=${item.seats}]`).css('cursor', 'auto');
-
                 })
+                modal.find('.modal-header').css('display', 'block');
+                modal.find('.title-name').text(film_name);
+                modal.find('.close').after(`<p class="mb-0 remove">${start} to ${end}</p>`);
                 modal.modal('show');
             }
         })

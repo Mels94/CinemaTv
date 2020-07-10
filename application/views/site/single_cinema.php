@@ -7,7 +7,7 @@
         <div class="row">
             <!-- title -->
             <div class="col-12">
-                <h1 class="cinema_title"><?= $data[0][0]['name']; ?> cinemas</h1>
+                <h1 class="cinema_title"><?= $data[0][0]['name']; ?> cinema</h1>
             </div>
             <!-- end title -->
 

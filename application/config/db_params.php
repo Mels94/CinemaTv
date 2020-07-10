@@ -2,7 +2,7 @@
 
 return array(
     'host' => 'localhost',
-    'dbname' => 'androblo_test',
-    'user' => 'androblo_test',
-    'password' => 'htfRE#@{jgd'
+    'dbname' => 'cinematv',
+    'user' => 'root',
+    'password' => 'root'
 );

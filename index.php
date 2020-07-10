@@ -18,21 +18,3 @@ $router->run();
 
 
 
-/*$ca = [
-    '1' => [
-        'price' => 50,
-        'seats' => 6,
-        'name' => 'Luxe'
-    ],
-    '2' => [
-        'price' => 30,
-        'seats' => 8,
-        'name' => 'Standard'
-    ],
-    '3' => [
-        'price' => 20,
-        'seats' => 10,
-        'name' => 'Cheap'
-    ]
-];
-echo json_encode($ca);*/

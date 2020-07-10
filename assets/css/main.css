@@ -1455,25 +1455,31 @@ ul {
 }
 
 .card__cover .img_cinema {
-    height: 250px;
+    height: 220px;
     border-radius: 20px;
 }
 
-@media (min-width: 1200px) {
-    .card__cover .img_cinema {
-        height: 200px;
-    }
-}
-
-@media (min-width: 768px) {
-    .card__cover .img_cinema {
-        height: 250px;
-    }
-}
-
-@media (min-width: 576px) {
+@media (max-width: 1200px) {
     .card__cover .img_cinema {
         height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card__cover .img_cinema {
+        height: 220px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card__cover .img_cinema {
+        height: 180px;
+    }
+}
+
+@media (max-width: 499px) {
+    .card__cover .img_cinema {
+        height: 120px;
     }
 }
 
@@ -4850,6 +4856,12 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     }
 }
 
+@media (max-width: 499px) {
+    .card__cover .img_film {
+        height: 200px;
+    }
+}
+
 .card__cover .single_img{
     height: 290px;
 }
@@ -4887,6 +4899,19 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     font-weight: 500;
 }
 
+@media (max-width: 499px) {
+    .cinema_info {
+        width: 240px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 499px) {
+    .cinema_info p {
+        font-size: 12px;
+    }
+}
+
 @media (max-width: 768px) {
     .iframe iframe{
         width: 500px;
@@ -4896,6 +4921,12 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 @media (max-width: 576px) {
     .iframe iframe{
         width: 450px;
+    }
+}
+
+@media (max-width: 499px) {
+    .iframe iframe{
+        width: 300px;
     }
 }
 
@@ -4923,6 +4954,12 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
         height: 366px;
     }
 }
+@media (max-width: 499px) {
+    .card__cover .new_img{
+        height: 200px;
+    }
+}
+
 
 
 /*-------video alert-------*/
@@ -4979,9 +5016,20 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     background-image: -ms-linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
     box-shadow: 0 0 20px 0 rgba(255, 88, 96, 0.5);
 }
+.modal-details .modal-header .close{
+    margin-top: -51px;
+}
+.modal-details .modal-header .close span{
+    font-size: 30px;
+}
 @media (min-width: 576px){
     #exampleModal .modal-dialog {
         max-width: 800px;
+    }
+}
+@media (max-width: 499px){
+    .modal-details .modal-header p{
+        font-size: 13px;
     }
 }
 .add-date-line .line-name,
@@ -5035,17 +5083,27 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     .add-date-line .line span i,
     .modal-body .line span i{
         font-size: 26px;
-        color: goldenrod;
     }
     .add-date-line .line-name,
     .modal-body .line-name{
         width: 120px;
-        border-right: 2px solid;
-        border-left: none;
-        font-style: italic;
-        padding: 10px 3px 10px 0;
         font-size: 12px;
-        font-weight: 500;
+    }
+}
+@media (max-width: 499px) {
+    .add-date-line .line span,
+    .modal-body .line span{
+        padding: 3px;
+    }
+    .add-date-line .line span i,
+    .modal-body .line span i{
+        font-size: 12px;
+    }
+    .add-date-line .line-name,
+    .modal-body .line-name{
+        width: 100px;
+        height: 30px;
+        font-size: 9px;
     }
 }
 

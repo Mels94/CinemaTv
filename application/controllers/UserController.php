@@ -13,6 +13,10 @@ class UserController extends BaseController
 {
     public function actionSignIn()
     {
+        if (Auth::checkLogged()){
+            Auth::redirect('/');
+            die;
+        }
         if (!empty($_POST) && isset($_POST['submit'])){
             $signIn = new SignIn($_POST);
             if (!empty($signIn->validate())){
@@ -29,6 +33,10 @@ class UserController extends BaseController
 
     public function actionSignUp()
     {
+        if (Auth::checkLogged()){
+            Auth::redirect('/');
+            die;
+        }
         if (!empty($_POST) && isset($_POST['submit'])){
             $signUp = new SignUp($_POST);
             if (!empty($signUp->validate())){
@@ -45,6 +53,10 @@ class UserController extends BaseController
 
     public function actionForgot()
     {
+        if (Auth::checkLogged()){
+            Auth::redirect('/');
+            die;
+        }
         if (!empty($_POST) && isset($_POST)){
             $forgot = new Profile($_POST);
             echo  json_encode(['success'=>$forgot->sendMail()]);die;

@@ -152,7 +152,7 @@ class SiteController extends BaseController
             $cron = new Product();
             $cron->runCron();
             die;
-            //$ curl -d "password=123" -X POST http://cinema.loc/api/cron
+            //curl -d "password=123" -X POST http://cinema.loc/api/cron
         }
        echo json_encode('error');
     }

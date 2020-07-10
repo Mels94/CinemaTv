@@ -130,8 +130,8 @@ class Product
         }
         $select = Db::getConnection()->prepare("SELECT * FROM `films` WHERE `id` IN (
                                                             SELECT `film_id` FROM `cinemas_films` WHERE `date_id` IN (
-                                                                SELECT `id` FROM `date_films` WHERE {$param2} {$param3} `cinema_id`='3'))");
-        $select->execute();
+                                                                SELECT `id` FROM `date_films` WHERE {$param2} {$param3} `cinema_id`=?))");
+        $select->execute([$this->param1]);
         return $select->fetchAll(\PDO::FETCH_ASSOC);
     }
 
